@@ -11,28 +11,20 @@ onMount(async () => {
 		console.log(data)
 		mounted=true
 
-		function compareStrings(a, b) {
-  			// Assuming you want case-insensitive comparison
-  			a = a.toLowerCase();
-  			b = b.toLowerCase();
-
-  			return (a < b) ? -1 : (a > b) ? 1 : 0;
-		}
-
-		data.sort(function(a, b) {
-  		return compareStrings(a, b);	
-			})
+		
 });
 
 </script>
 
 {#if mounted}
+<ol>
+	{#each Object.entries(data) as [title,link]}
 
-{#each Object.entries(data) as [title,link]}
+	<li><a href={link}>{title}</a></li>
+		
+	{/each}
+</ol>
 
-<li><a href={link}>{title}</a></li>
-	
-{/each}
 
 {/if}
 
