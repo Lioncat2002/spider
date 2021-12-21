@@ -29,5 +29,5 @@ for url in urls:
             #f.write(f"Title: {title.text} \n Link: {a.get('href')} \n\n")
 
 with open("links.json",'w') as f:
-    json.dump(d,f)
+    json.dump(d,f,sort_keys=True)
 
